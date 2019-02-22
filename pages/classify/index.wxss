@@ -1,0 +1,89 @@
+
+.classify_container{
+    background-color: #fff;
+    display: block;
+    width: 750rpx;
+    min-height: 100%;
+    overflow: hidden;
+    border-top: 2rpx solid #f0f0f0;
+}
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.scroll_nav{
+    position: fixed;
+    left: 0;
+    top:2rpx;
+    bottom: 0;
+    width: 196rpx;
+    background: #f0f0f0;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: content-box;
+}
+.scroll-view-item{
+    width: 196rpx;
+    height: 45rpx;
+    padding: 25rpx 0;
+    font-size: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+.active {
+    background: #fff;
+}
+.active .text {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border-left:4rpx solid red;
+}
+.scroll_main {
+    position: fixed;
+    right: 0;
+    top:2rpx;
+    bottom: -6rpx;
+    left:196rpx;
+    overflow: hidden;
+}
+.classify_content{
+    width: 100%;
+    width: 554rpx;
+    background: #fff;
+}
+.classify_content .nav_title{
+  width: 100%;
+  text-indent: 20rpx;
+  height: 100rpx;
+  font-size: 26rpx;
+  line-height: 100rpx;
+}
+.classify_content .list_box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    box-sizing: content-box;
+    padding: 0 20rpx;
+    border-bottom: 6rpx solid #f0f0f0;
+}
+.classify_content .nav_list {
+    width: 146rpx;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    justify-content: center;
+}
+.classify_content .nav_list .text{
+    font-size: 24rpx;
+    line-height: 80rpx;
+}
+.classify_content .nav_list:nth-child(3n+2){
+    margin: 0 35rpx;
+}
+.nav_list .image{
+    width: 140rpx;
+    height: 140rpx;
+}

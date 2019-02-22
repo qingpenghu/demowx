@@ -1,0 +1,26 @@
+<view class="classify_container">
+    <scroll-view
+        scroll-y
+        class="scroll_nav"
+  >
+    <block wx:for="{{classifyData}}" wx:key="{{item.id}}">
+        <view class="scroll-view-item {{item.id == checkedId ? 'active':''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="toggle">
+            <text class="text">{{item.sortName}}</text>
+        </view>
+    </block>
+  </scroll-view>
+  <scroll-view
+        scroll-y
+        class="scroll_main"
+  >
+    <view class="classify_content" wx:for="{{secondList}}" wx:key="{{item.id}}">
+        <view class="nav_title">{{item.sortName}}</view>
+        <view class="list_box">
+            <view class="nav_list"  wx:for="{{item.sortChildren}}" wx:key="{{item.id}}" data-property="{{item.property}}" data-id="{{item.id}}" bindtap="goSearch" >
+                <image class="image" src="{{item.imageUrl}}" />
+                <view class="text">{{item.sortName}}</view>
+            </view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

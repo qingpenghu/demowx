@@ -1,0 +1,99 @@
+page{
+    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 24rpx;
+    width: 100%;
+  }
+  .mine_top{
+      width: 750rpx;
+      height: 260rpx;
+      background: #f2f2f2;
+      box-sizing: content-box;
+      background-size: 100% 100%;
+      /* border-bottom-left-radius: 80rpx;
+      border-bottom-right-radius: 80rpx; */
+      /* border-radius:0 0 30% 30% / 0 0 30% 30%; */
+      /* border-radius: 20rpx; */
+      display: flex;
+      flex-flow: row nowrap;
+      box-sizing: content-box;
+      align-items: center;
+  }
+  .mine_top .image{
+      width: 150rpx;
+      height: 150rpx;
+      border-radius: 100rpx;
+      margin-left: 40rpx;
+  }
+  .user_name {
+        width: 400rpx;
+        height: 100rpx;
+        line-height: 100rpx;
+        font-size: 36rpx;
+        padding-left: 40rpx;
+        color: #FFF;
+  }
+  .my_order {
+      width: 710rpx;
+      height: 50rpx;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      align-items: center;
+      padding: 20rpx;
+      font-size: 30rpx;
+      border-bottom: 2rpx solid #f0f0f0;
+  }
+  .my_order .all {
+      color: gray;
+      font-size: 28rpx;
+  }
+  .order_main{
+      width: 610rpx;
+      height: 90rpx;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      box-sizing: content-box;
+      padding: 30rpx 70rpx;
+      font-size: 26rpx;
+      border-bottom: 16rpx solid #f0f0f0;
+  }
+  .order_main .order_item {
+      width: 84rpx;
+      height: 96rpx;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+  }
+  .order_main .order_item_last {
+    width: 125rpx;
+  }
+  .order_item .image{
+      width: 46rpx;
+      height: 46rpx;
+  }
+  .order_item .image image{
+    width: 46rpx;
+    height: 46rpx;
+  }
+  .list_item {
+      width: 670rpx;
+      height: 100rpx;
+      margin: 0 auto;
+      border-bottom: 2rpx solid #f1f1f1;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      font-size: 28rpx;
+      padding: 0 20rpx;
+  }
+  .list_item image{
+      width: 40rpx;
+      height: 40rpx;
+  }
+  .list_item .item_title {
+      text-indent: 26rpx;
+      height: 60rpx;
+      line-height: 60rpx;
+  }

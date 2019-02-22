@@ -1,0 +1,17 @@
+<view class="container">
+    <view class="login_main">
+        <view class="item_box">
+            <image class="image" src="/images/phone1.png" />
+            <input class="phone_input" placeholder="请输入手机号" bindinput='listenerPhoneInput' />
+        </view>
+        <view class="item_box">
+            <image class="pwd_image" src="/images/password.png" />
+            <input class="phone_input" placeholder="请输入密码" bindinput='listenerPwdInput' type="password" />
+        </view>
+    </view>
+    <view class="goLogin" bindtap='goToLogin'>登录</view>
+    <view class="bottom">
+        <view class="forget">忘记密码</view>
+        <view class="fast_login">快捷登录</view>
+    </view>
+</view>

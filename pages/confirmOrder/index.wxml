@@ -1,0 +1,58 @@
+<view class="container">
+    <view class="address_select">
+        <view>收货人地址</view>
+        <view class="select" bindtap="selectAddress">请选择收货人地址<text class="text"></text></view>
+    </view>
+    <view class="good_info">
+        <view class="business_name">苏宁易购</view>
+        <view class="goods_message">
+            <view class="good_image">
+                <image src="https://oss.eratpay.com/de44d16b17f74c31a5aa611b77e936ef.png" />
+            </view>
+            <view class="good_content">
+                <view class="good_title">爱丽思IRIS儿童环保彩色多层置物架KBR-030 彩色彩色</view>
+                <view class="good_point">
+                    <view><text>59000</text>积分</view>
+                    <view class="good_num">×1</view>
+                </view>
+            </view>
+        </view>
+        <view class="buy_info">
+            <view>购买数量</view>
+            <view class="piont_color">×1</view>
+        </view>
+        <view class="buy_info">
+            <view>商品金额</view>
+            <view class="piont_color">59900积分</view>
+        </view>
+        <view class="buy_info">
+            <view>运费</view>
+            <view class="piont_color">8800积分</view>
+        </view>
+        <view class="payNumber">实付款：<text class="piont_color">20000积分+0元</text></view>
+    </view>
+    <view class="pay_type">
+    <checkbox-group bindchange="checkboxChange">
+        <view class="pay_item">
+            <view class="pay_icon">
+                <image src="/images/qcIcon.png" />
+            </view>
+            <view class="pay_checked">
+               <checkbox value="point" checked="{{jfChecked}}" />
+            </view>
+        </view>
+        <view class="pay_item">
+            <view class="pay_icon">
+                <image src="/images/wxIcon.png" />
+            </view>
+            <view class="pay_checked">
+               <checkbox value="wx" checked="{{wxChecked}}" />
+            </view>
+        </view>
+    </checkbox-group>
+    </view>
+    <view class="bottom">
+        <view>积分余额：2000</view>
+        <view class="submit">提交订单</view>
+    </view>
+</view>

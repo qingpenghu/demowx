@@ -1,0 +1,84 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="goodDetail">
+    <view class="swiper">
+        <swiper class="swiper_box" 
+            indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}"
+            interval="{{interval}}"
+            duration="{{duration}}"
+            bindchange="swiperChange"
+            >
+            <block wx:for="{{ goodType ?  goodDetail.materials:fictitiousGoodDetail.product_bananer}}" wx:key="{{index}}">
+                <swiper-item>
+                <image src="{{goodType ? item.imageUrl:item}}" class="slide-image" width="100%" height="100%" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="dots">
+            <block wx:for="{{goodType ?  goodDetail.materials:fictitiousGoodDetail.product_bananer}}" wx:key="{{index}}">
+                <view class="dot{{index == swiperCurrent ? ' active':''}}"></view>
+            </block>
+        </view>
+    </view>
+    <view class="good_content">
+        <view class="name">{{ goodType ? goodDetail.fullName : fictitiousGoodDetail.full_name }}</view>
+        <view class="good_info">
+            <view class="point">
+                <text class="point_number">{{goodType ? upDatePrice.costPoint:fictitiousGoodDetail.mail_price }}</text> 积分
+                <text wx:if="{{!goodType}}" class="stock">  库存：{{fictitiousGoodDetail.stock_num}}件</text>
+            </view>
+            <view class="sales">
+                已售：<text class="saleNum">{{goodType ? goodDetail.soldNum:fictitiousGoodDetail.sales_base}}</text> 件
+            </view>
+        </view>
+        <view class="safeguard" wx:if="{{!goodType}}">
+              <view class="safeguard_item">
+                  <image src="/images/goodsDetial/icon_mall_ship.png"></image>  闪电发货
+              </view>  
+              <view class="safeguard_item">
+                  <image src="/images/goodsDetial/icon_mall_compensation.png"></image>  假一赔十
+              </view>  
+              <view class="safeguard_item">
+                  <image src="/images/goodsDetial/icon_mall_genuine.png"></image>  正品保障
+              </view>  
+        </view>
+    </view>
+    <view class="good_main" wx:if="{{goodType}}">
+        <view class="address" bindtap="selectAddress">
+            <view class="text_color">送至：</view> 
+            <view class="main">
+                <view class="address_info">{{addressSelect.province ? (addressSelect.province + " " + addressSelect.city +" "+ addressSelect.county  ):''}}</view>
+                <view class="good_sales">{{allowBuy ? buttonMessage : '现货'}}</view>
+            </view>
+            <view class="right">></view>
+        </view>
+        <view class="common_view">
+            <view class="text_color">运费：</view> <view class="view_content">免运费</view>
+        </view>
+        <view class="common_view">
+            <view class="text_color">已选：</view> <view class="view_content">1件</view>
+        </view>
+        <view class="common_view">
+            <view class="text_color">供应商：</view> <view class="view_content">苏宁易购</view>
+        </view>
+    </view>
+    <view class="good_introduce" wx:if="{{goodType}}">
+        <view class="introduce_left"></view>
+        <view class="introduce_content"><view>商品介绍</view></view>
+        <view class="introduce_left"></view></view>
+    <view class="wxParse" wx:if="{{goodType}}">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+    <view wx:if="{{!goodType}}" class="fictitious_good_main">
+        <view class="notice">购买须知：</view>
+        <block wx:for="{{fictitiousGoodDetail.pro_extends}}" wx:key="{{index}}">
+        <view class="redNum">{{item.attrDicNameCN}}</view>
+        <view class="notice_detail">{{item.detailDesc}}</view>
+        </block>
+    </view>
+    <view class="bottom_stance"></view>
+    <view class="good_bottom">
+        <view class="cancel">积分余额： 200</view>
+        <view class="confirm" bindtap="confirm">{{buttonMessage}}</view>
+    </view>
+</view>

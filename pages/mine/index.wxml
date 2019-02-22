@@ -1,0 +1,56 @@
+<view class="mine_content">
+    <view class="mine_top" style="background-image:url('https://tyuehd.oss-cn-beijing.aliyuncs.com/8f0d2803cac44ed88be5f1e9f2ad42df.png')">
+        <image class="image" src="{{userInfo.avatarUrl}}" />
+        <view class="user_name">{{userInfo.nickName}}</view>
+    </view>
+    <view class="my_order">
+        <view>我的订单</view>
+        <view class="all">全部 >></view>
+    </view>
+    <view class="order_main">
+        <view class="order_item">
+            <view class="image">
+                <image src="/images/mine/paymentIcon.png" />
+            </view>
+            <view>待支付</view>
+        </view>
+        <view class="order_item">
+            <view class="image">
+                <image src="/images/mine/deliverIcon.png" />
+            </view>
+            <view>待发货</view>
+        </view>
+        <view class="order_item">
+            <view class="image">
+                <image src="/images/mine/receiveIcon.png" />
+            </view>
+            <view>待收货</view>
+        </view>
+        <view class="order_item order_item_last">
+            <view class="image">
+                <image src="/images/mine/refundIcon.png" />
+            </view>
+            <view>退款/售后</view>
+        </view>
+    </view>
+    <view class="list_item">
+        <image src="/images/mine/my_detail_icon.png" />
+        <view class="item_title">积分明细</view>
+    </view>
+    <view class="list_item">
+        <image src="/images/mine/my_card_icon.png" />
+        <view class="item_title">我的卡包</view>
+    </view>
+    <view class="list_item">
+        <image src="/images/mine/icon_my_collect.png" />
+        <view class="item_title">我的收藏</view>
+    </view>
+    <view class="list_item" bindtap="goSelectAddress">
+        <image src="/images/mine/addressIcon.png" />
+        <view class="item_title">地址管理</view>
+    </view>
+    <view class="list_item" bindtap="goLogin">
+        <image src="/images/mine/addressIcon.png" />
+        <view class="item_title">登录</view>
+    </view>
+</view>

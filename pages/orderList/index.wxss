@@ -1,0 +1,77 @@
+.header_tab {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: 26rpx;
+    height: 80rpx;
+    width: 100%;
+    border-top: 2rpx solid #f0f0f0;
+    border-bottom: 2rpx solid #f0f0f0;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.header_tab view {
+    flex:1;
+    text-align: center;
+    line-height: 80rpx;
+}
+.header_tab text {
+    display: inline-block;
+    height: 80rpx;
+    box-sizing: border-box;
+}
+.header_tab text.active {
+    border-bottom: 4rpx solid #f44;
+    color: #f44;
+}
+.order_list_content {
+    margin-top: 80rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+.order_list_content .item_top {
+    width: 690rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    font-size: 26rpx;
+    padding: 0 30rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.item_top .order_status {
+    color: #fb6557;
+}
+.item_top .title {
+    font-size: 20rpx 30rpx;
+}
+.shop_info {
+    width: 690rpx;
+    height: 118rpx;
+    padding: 30rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: #f8f8f8;
+}
+.shop_info .image_box {
+    width: 108rpx;
+    height: 108rpx;
+}
+.shop_info .image {
+    width: 108rpx;
+    height: 108rpx;
+}
+.shop_info .good_name {
+    font-size: 28rpx;
+    text-indent: 20rpx;
+}
+.buy_message {
+    width: 730rpx;
+    padding-right: 20rpx;
+    font-size: 26rpx;
+    line-height: 60rpx;
+    text-align: right;
+    border-bottom: 10rpx solid #f8f8f8;
+}

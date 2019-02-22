@@ -1,0 +1,22 @@
+<view class="address">
+    <view class="selectAddress">地址： {{flag ? address[index].addressName :''}}{{ cityFlag ? cityAddress[cityIndex].addressName : ""}}{{ areaFlag ? areaAddress[areaIndex].addressName : ""}}</view>
+    <view class="section">
+        <picker bindchange="bindPickerChange"  range-key="addressName" range="{{address}}" value="{{index}}">
+            <view class="picker">所在地区：{{ flag ? address[index].addressName:'请选择'}}</view>
+        </picker>
+    </view>
+    <view class="section" wx:if="{{flag}}">
+        <picker bindchange="bindCityPickerChange"  range-key="addressName" range="{{cityAddress}}" value="{{cityIndex}}">
+            <view class="picker">市：{{ cityFlag ? cityAddress[cityIndex].addressName : "请选择"}}</view>
+        </picker>
+    </view>
+    <view class="section" wx:if="{{cityFlag}}">
+        <picker bindchange="bindAreaPickerChange"  range-key="addressName" range="{{areaAddress}}" value="{{areaIndex}}">
+            <view class="picker">城区：{{ areaFlag ? areaAddress[areaIndex].addressName : "请选择"}}</view>
+        </picker>
+    </view>
+    <view class="bottom">
+        <view class="cancel" bindtap="cancel">取消</view>
+        <view class="confirm" bindtap="confirm">确认</view>
+    </view>
+</view>

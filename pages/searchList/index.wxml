@@ -1,0 +1,36 @@
+<view class="container">
+    <view class="search_top"></view>
+    <view class="search_view" style="background:{{ scrollTop === 0 ?'-webkit-linear-gradient(top, rgba(105,195,170, 1), rgba(105,195,170, 0.3))' :( scrollTop<200 ? 'rgba(105,195,170,'+(scrollTop/400+0.3) +')' : 'rgba(105,195,170,1)')  }} ">
+        <view class="search_content">
+        <image src="/images/search-pic.png" class="search_icon" />
+        <input placeholder="请输入搜索内容" value="{{search}}" class="search_input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch'>
+        </input>
+        <button class='search_btn' bindtap="toSearch">搜索
+        </button>
+        </view>
+    </view>
+    <view class="main">
+        <view class="list_item" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="toDetailsTap" data-item="{{item}}" data-id="{{item.id}}">
+            <view class="image">
+                <image src="{{(item.image_url || item.imageUrl)}}" />
+            </view>
+            <view class="list_content">
+                <view class="name">{{item.full_name || item.fullName}}</view>
+                <view class="point"><text>{{apid == '237' ? item.costPoint : (apid == '239'?item.costPoint : item.exchange_points)}}</text> 积分</view>
+                <view class="sales"><view>已售：<text>{{apid == '239' ? item.soldNumber: (apid == '237' ? item.soldNum : item.sales)}}</text> 件</view> <view>库存：{{item.productType == '2' ? '--' : ( item.stockNum || item.stock_num)}}件</view></view>
+            </view>
+        </view>
+    </view>
+    <view class="loading"  wx:if="{{!lowerFlag}}"> 
+      <view id="ddr">
+          <view class="ddr ddr1"></view>
+          <view class="ddr ddr2"></view>
+          <view class="ddr ddr3"></view>
+          <view class="ddr ddr4"></view>
+          <view class="ddr ddr5"></view>
+          <view class="ddr_info">加载中...</view>
+      </view>
+  </view>
+  
+  <view class="loading" wx:if="{{noMoreData}}">{{noMoreDataShow ? "":"没有更多数据了"}}</view>
+</view>

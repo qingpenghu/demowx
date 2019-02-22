@@ -1,0 +1,20 @@
+page{
+    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 24rpx;
+    min-height: 100%;
+    width: 100%;
+  }
+  .mine_top{
+      width: 690rpx;
+      height: 300rpx;
+      background: #f2f2f2;
+      margin: 20rpx 30rpx;
+      box-sizing: content-box;
+      /* border-bottom-left-radius: 80rpx;
+      border-bottom-right-radius: 80rpx; */
+      /* border-radius:0 0 30% 30% / 0 0 30% 30%; */
+      border-radius: 20rpx;
+      display: flex;
+      flex-flow: row nowrap;
+      box-sizing: content-box;
+  }

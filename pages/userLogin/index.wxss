@@ -1,0 +1,45 @@
+.login_main {
+    width: 520rpx;
+    margin: 80rpx auto;
+    font-size: 26rpx;
+}
+.item_box {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 30rpx 0 15rpx;
+    border-bottom: 2rpx solid #ccc;
+    align-items: center;
+    font-size: 28rpx;
+}
+.item_box .image {
+    width: 30rpx;
+    height: 46rpx;
+}
+.item_box .pwd_image {
+    width: 30rpx;
+    height: 34rpx;
+}
+.item_box  .phone_input {
+    width: 470rpx;
+}
+.goLogin {
+    width: 520rpx;
+    height: 90rpx;
+    background: #f66e6e;
+    border-radius: 45rpx;
+    font-size: 40rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 90rpx;
+    letter-spacing: 8rpx;
+}
+.bottom {
+    width: 520rpx;
+    height: 80rpx;
+    display: flex;
+    font-size: 30rpx;
+    justify-content: space-between;
+    align-items: center;
+    color: #777;
+}

@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="header_tab">
+        <view bindtap="toggeleNav" data-status="0"><text class="{{orderStatus == '0' ? 'active':''}}">全部</text></view>
+        <view bindtap="toggeleNav" data-status="1"><text class="{{orderStatus == '1' ? 'active':''}}">待付款</text></view>
+        <view bindtap="toggeleNav" data-status="2"><text class="{{orderStatus == '2' ? 'active':''}}">已完成</text></view>
+        <view bindtap="toggeleNav" data-status="3"><text class="{{orderStatus == '3' ? 'active':''}}">已取消</text></view>
+    </view>
+    <view class="order_list_content">
+        <view class="item_top">
+            <view class="title">赚动</view>
+            <view class="order_status">已完成</view>
+        </view>
+        <view class="shop_info">
+            <view class="image_box">
+                <image class="image" src="https://oss.eratpay.com/5445bf2fc8f849a8b6c6cc6e0806e07f.png" />
+            </view>
+            <view class="good_name">爱奇艺黄金会员一个月</view>
+        </view>
+        <view class="buy_message">共计1件商品 小计200积分+2.6元</view>
+    </view>
+    <view class="loading"  wx:if="{{!lowerFlag}}"> 
+      <view id="ddr">
+          <view class="ddr ddr1"></view>
+          <view class="ddr ddr2"></view>
+          <view class="ddr ddr3"></view>
+          <view class="ddr ddr4"></view>
+          <view class="ddr ddr5"></view>
+          <view class="ddr_info">加载中...</view>
+      </view>
+  </view>
+  <view class="loading" wx:if="{{noMoreData}}">{{noMoreDataShow ? "":"没有更多数据了"}}</view>
+</view>

@@ -1,0 +1,112 @@
+.main {
+    width: 100%;
+}
+.main .list_item {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 30rpx 20rpx 20rpx;
+    border-bottom: 2rpx solid #efefef;
+}
+.main .list_item .image{
+    width: 220rpx;
+    height: 220rpx;
+}
+.main .list_item image{
+    width: 220rpx;
+    height: 220rpx;
+}
+.main .list_item .list_content {
+    width: 470rpx;
+    height: 210rpx;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 26rpx;
+    padding-top: 10rpx;
+}
+.list_content .name {
+    width: 100%;
+    max-height: 80rpx;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    word-break: break-all;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.list_content .point {
+    width: 100%;
+    color: #6d6a71;
+    line-height: 54rpx;
+}
+.list_content .point text {
+    color: #f66f6f;
+    font-size: 30rpx;
+}
+.list_content .sales {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    color: #808080;
+}
+.list_content .sales text {
+    color: #f66e6e;
+    font-size: 28rpx;
+}
+.search_top {
+    width:100%;
+    height:100rpx;
+
+}
+.search_view{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    z-index:500;
+    width: 100%;
+    height: 100rpx;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+  }
+  .search_content{
+     background: white;
+     width:650rpx;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     padding-top: auto;
+     padding-left: 20rpx;
+     padding-bottom: auto;
+     margin: auto;
+     height: 70rpx;
+     border-radius:5px 5px;
+  }
+  .search_icon{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+  }
+  .search_input{
+    width: 500rpx;
+    font-size: 28rpx;
+  }
+  .search_btn{
+    width: 150rpx;
+    height: 70rpx;
+    margin-right: 0rpx;
+    background-color:blueviolet;
+    font-size: 28rpx;
+    align-items: center;
+    border-top-left-radius: 0rpx;
+    border-bottom-left-radius: 0rpx;
+    color:#fff;
+    border:none;
+    position: relative;
+  }
