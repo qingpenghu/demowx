@@ -1,2 +1,3 @@
 wxdemo
 创建分支 dev
+Creating a new branch is quick & simple.
