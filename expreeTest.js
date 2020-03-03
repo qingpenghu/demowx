@@ -43,3 +43,5 @@ var arr = [1,2,3,4,5,6,7], crr,          // arr = [1, 2, 3, 4, 5, 6, 7]
     // crr = brr.join('')  // crr = 1234567  crr=brr.join(',') crr = 1,2,3,4,5,6,7 brr不变
     // console.log(crr)
     // console.log(brr)
+
+ // 新增
