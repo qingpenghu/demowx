@@ -18,3 +18,30 @@
     <div>你好，明天</div>
 </body>
 </html>
+<script>
+    function add() {
+    var _args = Array.prototype.slice.call(arguments)
+    
+    var _adder = function () {
+        console.log(_args,"_args")
+        console.log(...arguments,'push')
+        _args.push(...arguments)
+        console.log(_args,"222")
+        return _adder
+    }
+    
+    _adder.toString = function () {
+        return _args.reduce(function (a,b) {
+            return a+b
+        })
+    }
+    console.log(_adder)
+    return _adder
+
+}
+// var result1 = add(1)
+// var result1 = add(1)(2)(3)
+var result1 = add(1,2,3)
+
+console.log(result1)
+</script>
