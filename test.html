@@ -41,7 +41,126 @@
 }
 // var result1 = add(1)
 // var result1 = add(1)(2)(3)
-var result1 = add(1,2,3)
+// var result1 = add(1,2,3)
 
-console.log(result1)
+// console.log(result1)
+// call
+Function.prototype.myCall = function (context) {
+    if ( typeof this !== "function"  ) {
+        throw new TypeError('error')
+    }
+    context = context || window;
+    context.fn = this
+    console.log(this)
+    const args = [...arguments].slice(1)
+    const result = context.fn(...args)
+    delete context.fn
+    return result
+}
+
+let arr = [1,2,3,4]
+
+
+// apply
+Function.prototype.myApply = function (context) {
+    if( typeof this !== 'function' ) {
+        throw TypeError('not function')
+    }
+    context = context || window;
+    context.fn = this;
+    let result
+    if(arguments[1]) {
+        result = context.fn(...arguments[1])
+    }else{
+        result = context.fn()
+    }
+    delete context.fn;
+    return result;
+}
+
+// bind 功能实现
+Function.prototype.myBind = function (context) {
+    if ( typeof this !== 'function') {
+        throw typeError("error")
+    }
+    const _this = this
+    const args = [...arguments].slice(1)
+    return function F () {
+        if( _this instanceof F ) {
+            return new _this(...args,...arguments)
+        }
+        return _this.apply(context,args.concat(...arguments))
+    }
+
+}
+
+let res = Math.max.myApply(null,arr)
+// console.log(res)
+
+// 实现 new 功能
+function creat () {
+    let obj = {}; // 创建空对象
+    let Con = [].shift.call(arguments) // 获取构造函数
+    obj._proto_ = Con.prototype // 设置空对象原型
+    let result = Con.apply(obj,arguments) // 绑定this 并执行构造函数
+    return result instanceof Object ? result:obj // 确定返回值为对象
+
+}
+Function.prototype.Nbind = function(){
+    console.log(arguments)
+    console.log(arguments.length)
+        var self = this, 
+        context = [].shift.call( arguments ), 
+        
+        args = [].slice.call( arguments );
+        console.log("context",context)
+        console.log("args",args)
+        return function(){
+        return self.apply( context, [].concat.call( args, [].slice.call( arguments ) ) );
+    }
+    };
+    var obj = {
+        name: 'sven'
+    };
+    var func = function( a, b, c, d ){
+        console.log( this.name ); 
+        console.log( [ a, b, c, d ] ) 
+    }.Nbind( obj, 1, 2 ,3);
+    // func( 3, 4 )
+
+    function add() {
+        console.log('111',arguments)
+        var self = this;
+        var context = [].shift.call( arguments );
+        console.log('222',arguments)
+        var args = [].slice.call( arguments );
+        // console.log("context",context)
+        console.log("args",args)
+    }
+    var ass = {
+        name:1
+    }
+    add(ass,1,2,3)
+
+    /** 
+     * instanceof 功能实现
+    */
+   function myInstanceof(left,right) {
+       let R = right.prototype
+           L = left._proto_;
+           console.log(L)
+        while(true) {
+            if( L === null || L === undefined) {
+                return false
+            }
+            if( L ===R ) {
+                return true
+            }
+            L = L._proto_
+        }
+   }
+   var bee = new Array(1,2)
+   
+   console.log(bee._proto_,'www')
+   console.log( myInstanceof(bee,Array) )
 </script>
